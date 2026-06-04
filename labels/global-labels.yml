@@ -4,7 +4,4 @@
 	criteria:
 		vital: end_user_idp_department
 		value: Engineering
-- name: Uptime over 30 days
-	platform: darwin
-		query: Select 1 FROM uptime WHERE days > 30
-		label_membership_type: dynamic
+		
