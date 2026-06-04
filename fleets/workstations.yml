@@ -65,6 +65,12 @@ controls:
   #     - "x86-based Windows hosts"
   # ```  
   ###########################################################
+  apple_settings:
+    configuration_profiles
+    - path
+    ..//platforms/macos/configuration-profiles/disable-bluetooth-file-sharing.mobileconfig
+  labels_include_all:
+     - Department - Engineering
   macos_updates:
     deadline: "2026-07-30"
     minimum_version: "26.4"
@@ -202,4 +208,7 @@ software:
           failing_policies_webhook: true
           destination_url: https://webhook.site/0832fbd9-c153-446d-ae33-2213b0f06d85
           host_batch_size: 0
+
+
+
 
