@@ -15,13 +15,25 @@
 #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 name: "💻 Workstations"
+
 controls:
   apple_settings:
     configuration_profiles:
       - path: ../platforms/macos/configuration-profiles/disable-bluetooth-file-sharing.mobileconfig
         labels_include_all:
           - "Department - Engineering"
+          
+  scripts:
+    - paths: ../platforms/windows/scripts/set-wallpaper.ps1
+    
+  enable_disk_encryption: true
+  enable_recovery_lock_password: true
+  
   setup_experience:
+  
+  ipados_updates:
+    deadline: "2026-07-30"
+    minimum_version: "26.2"
     ###########################################################
     # Configure the macOS setup experience
     #
@@ -94,9 +106,9 @@ controls:
   #   • https://fleetdm.com/docs/configuration/yaml-files#windows-updates
   #   • https://fleetdm.com/guides/enforce-os-updates
   ###########################################################
-  # macos_updates:
-  #   deadline: "2030-04-01"
-  #   minimum_version: "26.0"
+   macos_updates:
+     deadline: "2026-07-30"
+     minimum_version: "26.4"
   #   update_new_hosts: true
   # windows_updates:
   #   deadline_days: 7
