@@ -65,22 +65,13 @@ controls:
   #     - "x86-based Windows hosts"
   # ```  
   ###########################################################
-  apple_settings:
-    configuration_profiles
-    - path
-    ..//platforms/macos/configuration-profiles/disable-bluetooth-file-sharing.mobileconfig
-  labels_include_all:
-     - Department - Engineering
-  macos_updates:
-    deadline: "2026-07-30"
-    minimum_version: "26.4"
-  apple_settings:
-    configuration_profiles:
-      - paths: ../platforms/macos/declaration-profiles/*.json
-      - paths: ../platforms/macos/configuration-profiles/*.mobileconfig
-  windows_settings:
-    configuration_profiles:
-      - paths: ../platforms/windows/configuration-profiles/*.xml
+  controls:
+    apple_settings:
+      configuration_profiles:
+        - path: ../platforms/macos/configuration-profiles/disable-bluetooth-file-sharing.mobileconfig
+        
+      labels_include_all:
+        - "Department - Engineering"
 
   ###########################################################
   # Managed disk encryption
@@ -168,8 +159,20 @@ policies:
 # Read more here:
 #   •  https://fleetdm.com/docs/configuration/yaml-files#software
 ###########################################################
+
+settings:
+  webhook_settings:
+    failing_policies_webhook: true
+    destination_url: https://webhook.site/0832fbd9-c153-446d-ae33-2213b0f06d85
+    host_batch_size: 0
+    #
 software:
-  fleet_maintained_apps:
+  packages:
+    - path: ../platforms/macos/software/zoom.yml
+      self_service: true
+      setup_experience: true
+      categories:
+        - Communication
     # macOS apps
     # …
     # - slug: slack/darwin # Slack for macOS
@@ -189,13 +192,6 @@ software:
     #     - Communication
     #   labels_include_any:
     #     - "x86-based Windows hosts"
-
-  packages:
-  - path: ../platforms/macos/software/zoom.yml
-    self_service: true
-    setup_experience: true
-    categories:
-    - Communication
   # Custom packages (if any)
     # macOS custom packages
     # …
@@ -208,13 +204,6 @@ software:
 
   app_store_apps: # Apps to install via VPP from the macOS App Store, if any
     # …
-
-    settings:
-      webhook_settings:
-          failing_policies_webhook: true
-          destination_url: https://webhook.site/0832fbd9-c153-446d-ae33-2213b0f06d85
-          host_batch_size: 0
-
 
 
 
