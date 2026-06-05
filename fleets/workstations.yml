@@ -31,7 +31,7 @@ controls:
   
   setup_experience: {}
   
-  ipados_updates:
+  macos_updates:
     deadline: "2026-07-30"
     minimum_version: "26.4"
     ###########################################################
