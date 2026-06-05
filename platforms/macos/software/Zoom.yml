@@ -1,5 +1,4 @@
 url: https://zoom.us/client/latest/ZoomInstallerIT.pkg
 
 post_install_script:
-- path: ../platforms/macos/software/zoom.yml
-#
+  path: ../software/zoom-config.sh
