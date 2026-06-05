@@ -163,7 +163,7 @@ policies:
     #
 software:
   packages:
-    - path: ../platforms/macos/software/zoom.yml
+    - path: ../platforms/macos/software/Zoom.yml
       self_service: true
       setup_experience: true
       categories:
