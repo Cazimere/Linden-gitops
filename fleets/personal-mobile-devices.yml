@@ -72,6 +72,10 @@ controls:
 # Apps to make available from the Apple App Store or Google Play
 ###########################################################
 software:
+  fleet_maintained_apps:
+    - slug: anydesk/darwin
+      self_service: true
+      
   packages:
     - path: ../platforms/windows/software/cloudflare-warp.yaml
       self_service: false
